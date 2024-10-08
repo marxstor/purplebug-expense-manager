@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expense Manager</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-slate-50">
+    <!-- sidebar -->
+    <div class="w-60 h-screen bg-purple-700 fixed">
+        <nav class="p-4">
+            <div class="profile flex items-center gap-4">
+                <img src = "images/profile.png" alt="profile-picture" class = "w-14">
+                <div>
+                    <p class="text-white text-lg font-bold">Mark Reyes</p>
+                    <p class="text-white text-sm">Admin</p>
+                </div>
+            </div>
+
+            <hr/>
+
+            <ul class="mt-5 py-4">
+                <li class = "text-white hover:bg-purple-500 p-2 rounded-lg outline-none mb-2 font-medium"><a href="#">Dashboard</a></li>
+                <hr>
+                <div class="mb-2">
+                    <p class="text-white m-2 font-medium">User Management</p>
+                    <li class = "text-white py-2 px-6 rounded-lg mb-1 outline-none hover:bg-purple-500"><a href="#">Roles</a></li>
+                    <li class = "text-white py-2 px-6 rounded-lg mb-1 outline-none bg-purple-500"><a href="#">Users</a></li>
+                </div>
+
+                <hr>
+                <div>
+                    <p class="text-white m-2 font-medium">Expense Management</p>
+                    <li class = "text-white py-2 px-6 rounded-lg mb-1 outline-none hover:bg-purple-500"><a href="#">Expense Categories</a></li>
+                    <li class = "text-white py-2 px-6 rounded-lg mb-1 outline-none hover:bg-purple-500"><a href="#">Expense</a></li>
+                </div>
+            </ul>
+        </nav>
+    </div>
+
+    <div class="right-side ml-60">
+        <!-- header -->
+        <header class="bg-white px-4 py-2 shadow">
+            <div class="flex justify-end align-center gap-10">
+                <p>Welcome to Expense Manager</p>
+                <a href = "#">Log out </a>
+            </div>
+        </header>
+
+        <main class="px-2 m-5">
+            <div class="flex justify-between mb-5">
+                <h2 class="text-lg font-bold">Users</h2>
+                <h2 class="text-lg font-bold">User Management > Users</h2>    
+            </div>
+
+            <!-- Modal toggle -->
+            <button data-modal-target="crud-modal" data-modal-toggle="crud-modal" class="block text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" type="button">
+                Add new user
+            </button>
+
+            <div class="mt-5 grid grid-cols-1 gap-10">
+                <div class="table">
+                    <div class="relative overflow-x-auto">
+                        <table class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
+                            <thead class="text-base text-gray-700 uppercase bg-white border-b-2">
+                                <tr>
+                                    <th scope="col" class="px-6 py-3">
+                                        Name
+                                    </th>
+                                    <th scope="col" class="px-6 py-3">
+                                        Role
+                                    </th>
+                                    <th scope="col" class="px-6 py-3">
+                                        Created At
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr class="bg-white border-b">
+                                    <th scope="row" class="px-6 py-4 font-medium text-gray-800 whitespace-nowrap">
+                                        Mark Reyes
+                                    </th>
+                                    <td class="px-6 py-4">
+                                        Administrator
+                                    </td>
+                                    <td class="px-6 py-4">
+                                        2024-03-10
+                                    </td>
+                                </tr>
+                                <tr class="bg-white border-b">
+                                    <th scope="row" class="px-6 py-4 font-medium text-gray-800 whitespace-nowrap">
+                                        Jake Reyes
+                                    </th>
+                                    <td class="px-6 py-4">
+                                        User
+                                    </td>
+                                    <td class="px-6 py-4">
+                                        2024-03-10
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        
+        </main>
+    </div>
+
+    <!-- Main modal -->
+    <div id="crud-modal" tabindex="-1" aria-hidden="true" class="hidden fixed inset-0 z-50 flex justify-center items-center bg-black bg-opacity-50">
+        <div class="relative p-4 w-full max-w-md max-h-full">
+            <!-- Modal content -->
+            <div class="relative bg-white rounded-lg shadow">
+                <!-- Modal header -->
+                <div class="flex items-center justify-between p-4 md:p-5 border-b rounded-t">
+                    <h3 class="text-lg font-semibold text-gray-900">
+                        Create New User
+                    </h3>
+                    <button type="button" class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center" data-modal-toggle="crud-modal">
+                        <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14">
+                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"/>
+                        </svg>
+                        <span class="sr-only">Close modal</span>
+                    </button>
+                </div>
+                <!-- Modal body -->
+                <form class="p-4 md:p-5">
+                    <div class="grid gap-4 mb-4 grid-cols-2">
+                        <div class="col-span-2">
+                            <label for="name" class="block mb-2 text-sm font-medium text-gray-900 ">Name</label>
+                            <input type="text" name="name" id="name" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5" placeholder="Type user name" required="">
+                        </div>
+
+                        <div class="col-span-2">
+                            <label for="name" class="block mb-2 text-sm font-medium text-gray-900 ">Email</label>
+                            <input type="email" name="email" id="name" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5" placeholder="Type user email" required="">
+                        </div>
+
+                        <div class="col-span-2">
+                            <label for="name" class="block mb-2 text-sm font-medium text-gray-900 ">Password</label>
+                            <input type="password" name="password" id="name" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5" placeholder="Type password" required="">
+                        </div>
+
+                        <div class="col-span-2 w-full">
+                            <label for="category" class="block mb-2 text-sm font-medium text-gray-900">User Role</label>
+                            <select id="category" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5">
+                                <option selected="">Select role</option>
+                                <option value="0">Administrator</option>
+                                <option value="1">User</option>
+                            </select>
+                        </div>
+
+                    </div>
+                    <button type="submit" class="text-white inline-flex items-center bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+                        <svg class="me-1 -ms-1 w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 5a1 1 0 011 1v3h3a1 1 0 110 2h-3v3a1 1 0 11-2 0v-3H6a1 1 0 110-2h3V6a1 1 0 011-1z" clip-rule="evenodd"></path></svg>
+                        Add new role
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+  <script>
+    // Modal functionality
+    document.querySelectorAll('[data-modal-toggle]').forEach((button) => {
+        button.addEventListener('click', () => {
+            const modal = document.getElementById(button.getAttribute('data-modal-toggle'));
+            modal.classList.toggle('hidden');
+        });
+    });
+
+    document.querySelectorAll('[data-modal-hide]').forEach((button) => {
+        button.addEventListener('click', () => {
+            const modal = button.closest('.fixed');
+            modal.classList.add('hidden');
+        });
+    });
+
+</script>
+
+
+    
+
+    
+</body>
+</html>
