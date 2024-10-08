@@ -1,6 +1,6 @@
-PURPLE BUG WEB DEVELOPER EXAM
+## PURPLE BUG WEB DEVELOPER EXAM
 
-EXPENSE MANAGEMENT USING LARAVEL AND VUE 3
+## EXPENSE MANAGEMENT USING LARAVEL AND VUE 3
 
 ## folder structure
 
@@ -17,18 +17,18 @@ EXPENSE MANAGEMENT USING LARAVEL AND VUE 3
 
 ## Default users
 
-# Note: Run the DefaultUserSeeder first to create the defualt users
+## Note: Run the DefaultUserSeeder first to create the defualt users
 
-# To run the seeder
+## To run the seeder
 
 -   `php artisan db:seed --class=DefaultUserSeeder`
 
-# admin user credentials
+## admin user credentials
 
 -   `email` - admin@gmail.com
 -   `password` - admin
 
-# Normal user credentials
+## Normal user credentials
 
 -   `email` - user@gmail.com
 -   `password` - user
