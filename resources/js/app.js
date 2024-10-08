@@ -6,7 +6,7 @@ import { createApp, h } from 'vue';
 import { createInertiaApp, Head, Link } from '@inertiajs/vue3';
 
 createInertiaApp({
-  title: title => `Expense Management ${title}`,
+  title: title => `Expense Manager ${title}`,
   resolve: name => {
     const pages = import.meta.glob('./Pages/**/*.vue', { eager: true })
     return pages[`./Pages/${name}.vue`]
