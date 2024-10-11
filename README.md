@@ -32,3 +32,6 @@
 
 -   email - `user@gmail.com`
 -   password - `user`
+
+## Additional Note:
+In order for the dashboard to show the chart the admin needs to add expense category first and add expenses to the expense page.
