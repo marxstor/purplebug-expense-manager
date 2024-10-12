@@ -33,3 +33,8 @@
 
 ## Additional Note:
 In order for the dashboard to show the chart the admin needs to add expense category first and add expenses to the expense page.
+
+
+## Made by Mark Reyes
+
+portfolio - `https://marxstor.github.io/mark-reyes/`
